@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/sia-pipeline-exam">
+    <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
