@@ -46,7 +46,7 @@ const Login = () => {
       if (userData) {
         console.log("User logged in:", userData);
         localStorage.setItem("name", userData.firstName);
-        window.location.replace("/sia-pipeline-exam/");
+        window.location.replace("/sia-pipeline-exam/home");
       } else {
         setError("Invalid email or password");
       }
