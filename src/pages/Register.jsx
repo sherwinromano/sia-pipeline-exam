@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
@@ -31,16 +32,23 @@ const Register = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen xs:px-4 lg:px-0 flex items-center justify-center bg-[#1d1d1d]">
       <form
         onSubmit={handleRegister}
-        className="bg-[#cccccc] p-4 w-[auto] rounded-[1rem] flex flex-col"
+        className="bg-[#0d0d0d] p-8 w-[auto] rounded-[1rem] flex flex-col border border-[#303030] gap-2"
       >
-        <div className="flex gap-2">
+        <div className="py-4 flex justify-center">
+          <h1 className="font-bold text-[1.5rem] text-white">
+            SIA Pipeline Exam
+          </h1>
+        </div>
+        <div className="flex xs:flex-col lg:flex-row gap-2 w-full">
           <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="firstName" className="text-base text-white">
+              First Name
+            </label>
             <input
-              className="outline-none p-2 rounded-sm"
+              className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
               type="text"
               name="firstName"
               id="firstName"
@@ -49,9 +57,11 @@ const Register = () => {
             />
           </div>
           <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="lastName" className="text-base text-white">
+              Last Name
+            </label>
             <input
-              className="outline-none p-2 rounded-sm"
+              className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
               type="text"
               name="lastName"
               id="lastName"
@@ -60,13 +70,15 @@ const Register = () => {
             />
           </div>
         </div>
-        <div className="flex gap-2">
-          <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="gender">Gender</label>
+        <div className="flex xs:flex-col lg:flex-row gap-2 w-full">
+          <div className="flex flex-col gap-2 w-full justify-between">
+            <label htmlFor="gender" className="text-base text-white">
+              Gender
+            </label>
             <select
               name="gender"
               id="gender"
-              className="outline-none p-2 rounded-sm"
+              className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
               value={formData.gender}
               onChange={handleChange}
             >
@@ -76,9 +88,11 @@ const Register = () => {
             </select>
           </div>
           <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="age">Age</label>
+            <label htmlFor="age" className="text-base text-white">
+              Age
+            </label>
             <input
-              className="outline-none p-2 rounded-sm"
+              className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
               type="number"
               name="age"
               id="age"
@@ -88,9 +102,11 @@ const Register = () => {
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="text-base text-white">
+            Email
+          </label>
           <input
-            className="outline-none p-2 rounded-sm"
+            className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
             type="email"
             name="email"
             id="email"
@@ -99,9 +115,11 @@ const Register = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="text-base text-white">
+            Password
+          </label>
           <input
-            className="outline-none p-2 rounded-sm"
+            className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
             type="password"
             name="password"
             id="password"
@@ -110,11 +128,17 @@ const Register = () => {
           />
         </div>
         <button
-          className="bg-[blue] text-white w-full mt-4 p-2 cursor-pointer rounded-sm"
+          className="bg-[#f0f0f0] text-black w-full mt-4 p-2 cursor-pointer rounded-sm"
           type="submit"
         >
           Submit
         </button>
+        <p className="text-white text-[14px] mt-[4px]">
+          Already have an account?{" "}
+          <Link to="/sia-pipeline-exam/login" className="font-bold">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );
