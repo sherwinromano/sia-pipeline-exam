@@ -1,9 +1,6 @@
 {
     "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
+      { "source": "/sia-pipeline-exam/(.*)", "destination": "/sia-pipeline-exam/index.html" }
     ]
   }
   
