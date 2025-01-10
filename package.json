@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "firebase": "firebase deploy",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -27,5 +28,7 @@
     "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "vite": "^6.0.5"
-  }
+  },
+  "homepage": "https://yourusername.github.io/sia-pipeline-exam"
+  
 }
