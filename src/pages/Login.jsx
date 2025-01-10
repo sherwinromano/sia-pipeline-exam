@@ -46,7 +46,7 @@ const Login = () => {
       if (userData) {
         console.log("User logged in:", userData);
         localStorage.setItem("name", userData.firstName);
-        window.location.replace("/");
+        window.location.replace("/sia-pipeline-exam/");
       } else {
         setError("Invalid email or password");
       }
@@ -104,7 +104,7 @@ const Login = () => {
         {error && <p className="text-red-500 mt-2">{error}</p>}
         <p className="text-white text-[14px] mt-[4px]">
           Don't have an account?{" "}
-          <Link to="/sia-pipeline-exam/register" className="font-bold">
+          <Link to="/register" className="font-bold">
             Register
           </Link>
         </p>

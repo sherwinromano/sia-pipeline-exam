@@ -135,7 +135,7 @@ const Register = () => {
         </button>
         <p className="text-white text-[14px] mt-[4px]">
           Already have an account?{" "}
-          <Link to="/sia-pipeline-exam/login" className="font-bold">
+          <Link to="/login" className="font-bold">
             Login
           </Link>
         </p>
