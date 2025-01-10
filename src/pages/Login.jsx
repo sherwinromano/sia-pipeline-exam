@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "../../firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const loginUser = async ({ email, password }) => {
   try {
@@ -55,40 +56,58 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen xs:px-4 lg:px-0 flex items-center justify-center bg-[#1d1d1d]">
       <form
         onSubmit={handleLogin}
-        className="bg-[#cccccc] p-4 w-[24rem] rounded-[1rem]"
+        className="bg-[#0d0d0d] p-8 w-[24rem] rounded-[1rem] flex flex-col border border-[#303030] gap-2"
       >
+        <div className="py-4 flex justify-center">
+          <h1 className="font-bold text-[1.5rem] text-white">
+            SIA Pipeline Exam
+          </h1>
+        </div>
+
         <div className="flex flex-col gap-2">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="text-base text-white">
+            Email
+          </label>
           <input
-            className="outline-none p-2 rounded-sm"
+            className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
             type="email"
             name="email"
             id="email"
+            placeholder="Email"
             value={credentials.email}
             onChange={handleInputChange}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="text-base text-white">
+            Password
+          </label>
           <input
-            className="outline-none p-2 rounded-sm"
+            className="outline-none py-2 text-white rounded-sm bg-transparent border-b border-[#cccccc]"
             type="password"
             name="password"
+            placeholder="Password"
             id="password"
             value={credentials.password}
             onChange={handleInputChange}
           />
         </div>
         <button
-          className="bg-[blue] text-white w-full mt-4 p-2 cursor-pointer rounded-sm"
+          className="bg-[#f0f0f0] text-black w-full mt-4 p-2 cursor-pointer rounded-sm"
           type="submit"
         >
           Submit
         </button>
         {error && <p className="text-red-500 mt-2">{error}</p>}
+        <p className="text-white text-[14px] mt-[4px]">
+          Don't have an account?{" "}
+          <Link to="/sia-pipeline-exam/register" className="font-bold">
+            Register
+          </Link>
+        </p>
       </form>
     </div>
   );
